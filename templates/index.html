@@ -1,0 +1,351 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home MediTack{% endblock %}
+
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <div class="container-fluid p-0">
+        <div class="hero-wrapper">
+          <div class="hero-image">
+            <img src="{% static 'assets/img/health/BG.jpg' %}" alt="Advanced Healthcare" class="img-fluid">
+          </div>
+
+          <div class="hero-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7 col-md-10" data-aos="fade-right" data-aos-delay="100">
+                  <div class="content-box">
+                    <h1 data-aos="fade-up" data-aos-delay="200">Compassionate Care, Advanced Medicine, Right Here in Kenya</h1>
+                    <p data-aos="fade-up" data-aos-delay="250">UzimaHealth is your trusted healthcare partner, delivering world-class medical services with a caring touch. From everyday checkups to specialized treatments, your health is our priority</p>
+
+                    <div class="cta-group" data-aos="fade-up" data-aos-delay="300">
+                      <a href="{% url 'UzimaHealth:booking' %}" class="btn btn-primary">Book Appointment</a>
+                      <a href="{% url 'UzimaHealth:services' %}" class="btn btn-outline">Explore Services</a>
+                    </div>
+
+                    <div class="info-badges" data-aos="fade-up" data-aos-delay="350">
+                      <div class="badge-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div class="badge-content">
+                          <span>Emergency Line</span>
+                          <strong>0794760331</strong>
+                        </div>
+                      </div>
+                      <div class="badge-item">
+                        <i class="bi bi-clock-fill"></i>
+                        <div class="badge-content">
+                          <span>Working Hours</span>
+                          <strong>Mon–Sat: 8:00 AM – 7:00 PM | Sundays: Emergency Only</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="features-wrapper">
+                <div class="row gy-4">
+
+                  <div class="col-lg-4">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
+                      
+                      <div class="feature-text">
+                        <h3>Cardiology</h3>
+                        <p>Heart health checkups, advanced diagnostics, and treatment for cardiac conditions</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                      
+                      <div class="feature-text">
+                        <h3>Oncology</h3>
+                        <p>Specialized cancer screening, treatment, and support programs.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="feature-item" data-aos="fade-up" data-aos-delay="550">
+                      
+                      <div class="feature-text">
+                        <h3>Emergency & Trauma</h3>
+                        <p>24/7 care for accidents, injuries, and critical cases.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Home About Section -->
+    <section id="home-about" class="home-about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="about-image">
+              <img src="{% static 'assets/img/health/FC.jpg' %}" alt="Modern Healthcare Facility" class="img-fluid rounded-3 mb-4">
+      
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+            <div class="about-content">
+              <h2>Committed to Exceptional Patient Care</h2>
+              <p class="lead">For over two decades, our hospital has been at the forefront of delivering quality medical services with professionalism, compassion, and innovation. By integrating modern healthcare technology with skilled specialists, we ensure every patient receives timely and reliable care</p>
+
+               <p>Our new Hospital Booking Web Application reflects this commitment by providing patients with a simple, efficient, and accessible way to schedule medical tests online—reducing waiting times and improving service delivery</p>
+              <div class="row g-4 mt-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                  <div class="feature-item">
+                    <h4>Compassionate Care</h4>
+                    <p>We believe that healthcare is not just about treatment, but about caring for people with empathy and respect. Our system is designed with patients in mind, offering user-friendly features and real-time booking confirmations to give peace of mind to families and individuals</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                  <div class="feature-item">
+                    
+                    <h4>Medical Excellence</h4>
+                    <p>Our team of specialists continues to embrace innovation and best practices in healthcare. With the new online booking system, we eliminate manual inefficiencies, ensure accurate patient records, and provide seamless coordination between departments for world-class service</p>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-wrapper mt-4">
+                <a href="{% url 'UzimaHealth:about' %}" class="btn btn-primary">Learn More About Us</a>
+                
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </section><!-- /Home About Section -->
+
+    <!-- Featured Departments Section -->
+    <section id="featured-departments" class="featured-departments section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Departments</h2>
+        <p>Delivering specialized medical care through modern technology and expert professionals</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/CD.jpg' %}" alt="Cardiology Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                <h3>Cardiology</h3>
+                <p>Comprehensive cardiovascular care with advanced diagnostics and treatment options. Patients can conveniently book tests such as ECG, Echocardiogram, and Cardiac Stress Tests through our booking system to ensure timely detection and management of heart conditions</p>
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/NG.jpeg' %}" alt="Neurology Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                
+                <h3>Neurology</h3>
+                Expert care for brain and nervous system disorders. Our specialists provide cutting-edge treatments, while the booking system allows patients to schedule tests such as EEG, MRI, and Stroke Assessments without delays
+                
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/ORT.jpeg' %}" alt="Orthopedics Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                
+                <h3>Orthopedics</h3>
+                <p>Advanced musculoskeletal care focusing on bones, joints, and muscles. Patients can book diagnostic imaging like X-rays and MRI scans to support both surgical and non-surgical treatment approaches for mobility restoration</p>
+                
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/PD.jpg' %}" alt="Pediatrics Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                
+                <h3>Pediatrics</h3>
+                <p>Specialized healthcare for children from infancy to adolescence. From growth monitoring to vaccination appointments, parents can easily schedule visits and ensure child-friendly medical care</p>
+                
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/ON.webp' %}" alt="Oncology Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                
+                <h3>Oncology</h3>
+                <p>Comprehensive cancer care with a multidisciplinary approach. Patients can book for Blood Tests, Biopsies, and Imaging Scans directly online, streamlining treatment planning and reducing waiting times</p>
+                
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="department-card">
+              <div class="department-image">
+                <img src="{% static 'assets/img/health/EM.jpeg' %}" alt="Emergency Department" class="img-fluid">
+              </div>
+              <div class="department-content">
+                
+                <h3>Emergency Care</h3>
+                <p>Round-the-clock emergency medical services with rapid response and state-of-the-art facilities. The booking system supports urgent diagnostic requests, ensuring critical cases receive immediate attention</p>
+                  
+              </div>
+            </div>
+          </div><!-- End Department Card -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Departments Section -->
+
+    <!-- Featured Services Section -->
+    <section id="featured-services" class="featured-services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Featured Services</h2>
+        <p>Quality healthcare made accessible with advanced technology and patient-centered care</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              
+              <div class="service-content">
+                <h3>Cardiology Excellence</h3>
+                <p>We provide advanced cardiac care for the prevention, diagnosis, and treatment of heart conditions. Patients can conveniently book screenings and diagnostic tests through our system for early detection and management</p>
+                <ul class="service-features">
+                  <li><i class="fas fa-check-circle"></i>Advanced Heart Surgery</li>
+                  <li><i class="fas fa-check-circle"></i>24/7 Emergency Care</li>
+                  <li><i class="fas fa-check-circle"></i>Preventive Screenings</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div><!-- End Service Card -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              
+              <div class="service-content">
+                <h3>Neurology &amp; Brain Health</h3>
+                <p>Our neurology team offers expert care for brain and nervous system disorders, supported by modern diagnostic facilities. The booking system enables quick scheduling for critical assessments</p>
+                <ul class="service-features">
+                  <li><i class="fas fa-check-circle"></i>Brain Imaging &amp; Diagnostics</li>
+                  <li><i class="fas fa-check-circle"></i>Stroke Treatment Center</li>
+                  <li><i class="fas fa-check-circle"></i>Neurological Rehabilitation</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div><!-- End Service Card -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+              
+              <div class="service-content">
+                <h3>Orthopedic Surgery</h3>
+                <p>We specialize in bone, joint, and muscle care, ensuring faster recovery and restored mobility. Patients can schedule appointments for X-rays, sports injury evaluations, and surgeries with ease</p>
+                <ul class="service-features">
+                  <li><i class="fas fa-check-circle"></i>Joint Replacement Surgery</li>
+                  <li><i class="fas fa-check-circle"></i>Sports Medicine</li>
+                  <li><i class="fas fa-check-circle"></i>Minimally Invasive Procedures</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div><!-- End Service Card -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card">
+              
+              <div class="service-content">
+                <h3>Emergency &amp; Trauma Care</h3>
+                <p>Our Emergency Department operates 24/7 to handle critical and life-threatening conditions. Patients and families benefit from rapid admission and instant test booking for urgent cases</p>
+                <ul class="service-features">
+                  <li><i class="fas fa-check-circle"></i>24/7 Emergency Department</li>
+                  <li><i class="fas fa-check-circle"></i>Level 1 Trauma Center</li>
+                  <li><i class="fas fa-check-circle"></i>Critical Care Units</li>
+                </ul>
+                
+              </div>
+            </div>
+          </div><!-- End Service Card -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 data-aos="fade-up" data-aos-delay="200">Your Health is Our Priority</h2>
+            <p data-aos="fade-up" data-aos-delay="250">At UzimaHealth, we believe that quality healthcare should be accessible to everyone. Our dedicated team works tirelessly to ensure you receive timely, reliable, and compassionate care whenever you need it.
+
+From routine check-ups to specialized treatments, we combine modern medical expertise with a personal touch—because your well-being is at the heart of everything we do</p>
+
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+              <a href="{% url 'UzimaHealth:booking' %}" class="btn-primary">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row features-row" data-aos="fade-up" data-aos-delay="400">
+
+        </div>
+
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+
+{% endblock %}

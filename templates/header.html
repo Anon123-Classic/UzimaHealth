@@ -1,0 +1,41 @@
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="header-container container-fluid container-lg d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a href="{% url 'UzimaHealth:Home' %}" class="logo d-flex align-items-center">
+      
+      <h1 class="sitename ms-2">UzimaHealth</h1>
+    </a>
+
+    <!-- Navigation Menu -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'UzimaHealth:Home' %}">Home</a></li>
+        <li><a href="{% url 'UzimaHealth:about' %}">About</a></li>
+        <li><a href="{% url 'UzimaHealth:departments' %}">Departments</a></li>
+        <li><a href="{% url 'UzimaHealth:services' %}">Services</a></li>
+        <li><a href="{% url 'UzimaHealth:contact' %}">Contact</a></li>
+        
+        <!-- <li><a href="{% url 'UzimaHealth:show_booking' %}">View Booking</a></li> -->
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+    <a href="{% url 'UzimaHealth:booking' %}" class="btn-getstarted" >Book Appointment</a>
+
+    <!-- Right Action Buttons -->
+    <div class="d-flex align-items-center gap-2">
+      {% if user.is_authenticated %}
+        <!-- Logout Button -->
+        <form method="POST" action="{% url 'accounts:logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-sm rounded-pill">Logout</button>
+        </form>
+      {% else %}
+        <!-- Register & Login Buttons -->
+        <!-- <a href="{% url 'accounts:register' %}" class="btn btn-success btn-sm rounded-pill">Register</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-dark btn-sm rounded-pill">Login</a> -->
+      {% endif %}
+    </div>
+
+  </div>
+</header>

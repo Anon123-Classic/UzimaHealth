@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Departments{% endblock %}
+
+{% block content %}
+<br><br><br>
+<section id="departments" class="departments section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Departments</h2>
+    <p>Comprehensive healthcare services across multiple specialties, delivered with compassion and expertise.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+      
+      <!-- Cardiology -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Cardiology</h3>
+            <p class="department-subtitle">Heart & Vascular Care</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/CAD.jpeg' %}" 
+                 alt="Cardiology Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Comprehensive heart care with advanced diagnostic and treatment options.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Heart Disease Prevention</li>
+              <li><i class="bi bi-check2"></i> Cardiac Imaging</li>
+              <li><i class="bi bi-check2"></i> Heart Surgery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dermatology -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Dermatology</h3>
+            <p class="department-subtitle">Skin & Cosmetic Care</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/DM.webp' %}" 
+                 alt="Dermatology Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Expert care for skin conditions, cosmetic treatments, and skin cancer screening.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Skin Treatments</li>
+              <li><i class="bi bi-check2"></i> Cosmetic Procedures</li>
+              <li><i class="bi bi-check2"></i> Laser Therapy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pediatrics -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Pediatrics</h3>
+            <p class="department-subtitle">Children's Health</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/PEDIA.webp' %}" 
+                 alt="Pediatrics Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Dedicated to children's growth, development, and overall health from birth to adolescence.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Vaccinations</li>
+              <li><i class="bi bi-check2"></i> Child Wellness</li>
+              <li><i class="bi bi-check2"></i> Development Care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neurology (Updated to match others) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Neurology</h3>
+            <p class="department-subtitle">Brain & Nervous System</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/Neu.jpeg' %}" 
+                 alt="Neurology Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Excellence in diagnosing and treating complex brain and nervous system disorders.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Stroke Treatment</li>
+              <li><i class="bi bi-check2"></i> Epilepsy Care</li>
+              <li><i class="bi bi-check2"></i> Memory Disorders</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orthopedics -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Orthopedics</h3>
+            <p class="department-subtitle">Bones & Joints</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/ortho.jpeg' %}" 
+                 alt="Orthopedics Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Advanced care for bone, joint, and spine problems with surgical and non-surgical treatments.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Joint Replacement</li>
+              <li><i class="bi bi-check2"></i> Sports Injuries</li>
+              <li><i class="bi bi-check2"></i> Spine Surgery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gynecology -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="department-card">
+          <div class="department-header">
+            <h3>Gynecology</h3>
+            <p class="department-subtitle">Women's Health</p>
+          </div>
+          <div class="department-image-wrapper">
+            <img src="{% static 'assets/img/health/gyne.jpeg' %}" 
+                 alt="Gynecology Department" class="img-fluid" loading="lazy">
+          </div>
+          <div class="department-content">
+            <p>
+              Specialized care for women’s reproductive health, pregnancy, and wellness.
+            </p>
+            <ul class="department-highlights">
+              <li><i class="bi bi-check2"></i> Prenatal Care</li>
+              <li><i class="bi bi-check2"></i> Reproductive Health</li>
+              <li><i class="bi bi-check2"></i> Fertility Care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

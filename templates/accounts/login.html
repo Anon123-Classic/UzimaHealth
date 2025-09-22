@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg p-4 rounded-4" style="max-width: 400px; width: 100%;">
+    <h3 class="text-center mb-4 fw-bold text-primary">Login</h3>
+    {% if messages %}
+      <div class="mb-3">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <form method="post" action="#">
+      {% csrf_token %}
+      <!-- Username -->
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="usernameInput" name="username" placeholder="Username" required>
+        <label for="usernameInput"><i class="bi bi-person-fill me-2"></i>Username</label>
+      </div>
+      <!-- Password -->
+      <div class="form-floating mb-4">
+        <input type="password" class="form-control" id="passwordInput" name="password" placeholder="Password" required>
+        <label for="passwordInput"><i class="bi bi-lock-fill me-2"></i>Password</label>
+      </div>
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg rounded-pill">
+          <i class="bi bi-box-arrow-in-right me-2"></i> Login
+        </button>
+      </div>
+    
+      
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

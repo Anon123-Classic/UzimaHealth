@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} contacts {% endblock %}
+{% block content %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+
+      <div class="title-wrapper">
+        <h1>Contact</h1>
+        <p>Have a question, need assistance, or want to book a consultation? Our team is here to help you</p>
+      </div>
+    </div><!-- End Page Title -->
+      {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info-panel">
+            <div class="contact-info-header">
+              <h3>Contact Information</h3>
+              <p>If you have any questions or need assistance, please don't hesitate to reach out to us.</p>
+            </div>
+
+            <div class="contact-info-cards">
+              <div class="info-card">
+                <div class="icon-container">
+                  <i class="bi bi-pin-map-fill"></i>
+                </div>
+                <div class="card-content">
+                  <h4>Our Location</h4>
+                  <p>kericho</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-container">
+                  <i class="bi bi-envelope-open"></i>
+                </div>
+                <div class="card-content">
+                  <h4>Email Us</h4>
+                  <p>anonclassic@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-container">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div class="card-content">
+                  <h4>Call Us</h4>
+                  <p>+254794760331</p>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="icon-container">
+                  <i class="bi bi-clock-history"></i>
+                </div>
+                <div class="card-content">
+                  <h4>Working Hours</h4>
+                  <p>Mon–Sat: 8:00 AM – 7:00 PM | Sundays: Emergency Only</p>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="contact-form-panel">
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9089.321735043668!2d35.278543135935934!3d-0.36771374160139086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182a5778a70a0e19%3A0x9e111200e6923897!2sKericho!5e1!3m2!1sen!2ske!4v1758518885192!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="form-container">
+              <h3>Send Us a Message</h3>
+              <p>Fill in the form below, and we’ll get back to you as soon as possible</p>
+
+              <form method="post">
+                {% csrf_token %}
+                <label for="Full name"><b>Full Name:</b></label>
+                <input type="text" class="form-control"  name="name" placeholder="enter your name" required="">
+               <br>
+
+                <label for="emailInput"><b>Email Address:</b></label>
+                <input type="email" class="form-control" id="emailInput" name="email" placeholder="Email Address" required="">
+                <br>
+                  <label for="subjectInput"><b>Subject:</b></label>
+                  <input type="text" class="form-control" id="subjectInput" name="subject" placeholder="Subject" required="">
+                  <br>
+                  <label for="messageInput"><b>Your Message:</b></label>
+                  <textarea class="form-control" id="messageInput" name="message" rows="5" placeholder="Your Message" style="height: 150px" required=""></textarea>
+                  <br>
+  
+                <div class="d-grid">
+                  <button type="submit" class="btn-submit">Send Message <i class="bi bi-send-fill ms-2"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+
+{% endblock %}
+
+
+
+
+
+

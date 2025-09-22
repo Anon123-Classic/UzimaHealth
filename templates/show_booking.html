@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Booking Details{% endblock %}
+
+{% block content %}
+<br><br><br><br><br><br>
+<h2 style="text-align: center;" ><b>Booking Details</b></h2>
+<form method="get" action="">
+    <input type="text" name="q" placeholder="Search by patient or test"
+           value="{{ query }}" class="form-control" style="width:300px; display:inline-block;">
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a href="{% url 'UzimaHealth:show_booking' %}" class="btn btn-secondary">Reset</a>
+</form>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Patient Name</th>
+            <th>Age</th>
+            <th>Contact Number</th>
+            <th>Test Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Hospital Name</th>
+            <th class="no-print">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.patient_name }}</td>
+            <td>{{ booking.age }}</td>
+            <td>{{ booking.contact_number }}</td>
+            <td>{{ booking.test_type }}</td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time }}</td>
+            <td>{{ booking.hospital_name }}</td>
+            <td class="no-print">
+                <a href="{% url 'UzimaHealth:delete_booking' booking.id %}" onclick="return confirm('Are you sure you want to delete this booking?')" class="btn btn-danger btn-sm">Delete</a>
+                <a href="{% url 'UzimaHealth:update_booking' booking.id %}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<button onclick="printTable()" class="btn btn-primary">🖨️ Print All Appointments</button>
+
+<script>
+function printTable() {
+  var divContents = document.querySelector("table").outerHTML;
+  var printWindow = window.open('', '', 'height=600,width=800');
+  printWindow.document.write('<html><head><title>Booking</title></head><body>');
+  printWindow.document.write('<h2>Booking Records</h2>');
+  printWindow.document.write(divContents);
+  printWindow.document.write('</body></html>');
+  printWindow.document.close();
+  printWindow.print();
+}
+
+
+</script>
+
+
+{% endblock %}

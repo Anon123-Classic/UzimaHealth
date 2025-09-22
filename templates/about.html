@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+  
+ 
+
+  <main class="main">
+
+    <!-- Page Title -->
+       <div class="page-title">
+      
+      <div class="title-wrapper">
+        <h1>About</h1>
+        <p>At UzimaHealth, we are dedicated to providing accessible, reliable, and compassionate healthcare services to our community. Our mission is to promote wellness, prevent illness, and ensure every patient receives quality care tailored to their needs</p>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="content">
+              <h2>Committed to Excellence in Healthcare</h2>
+              <p>
+                For over 25 years, UzimaHealth has been at the forefront of patient-centered care. With a focus on integrity, innovation, and compassion, we have served more than 50,000 patients, offering modern medical solutions combined with personalized attention
+              </p>
+              <p>
+                Our team of highly skilled doctors, nurses, and specialists work together to deliver world-class treatment while maintaining a warm, supportive environment. From preventive check-ups to advanced medical procedures, UzimaHealth is committed to improving lives every day
+              </p>
+
+              <div class="stats-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+                  <div class="col-sm-6 col-lg-12 col-xl-6">
+                    <div class="stat-item">
+                      <div class="stat-number">
+                        <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>+
+                      </div>
+                      <div class="stat-label">Years of Experience</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-lg-12 col-xl-6">
+                    <div class="stat-item">
+                      <div class="stat-number">
+                        <span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="2" class="purecounter"></span>+
+                      </div>
+                      <div class="stat-label">Patients Treated</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="image-section" data-aos="fade-left" data-aos-delay="200">
+              <div class="main-image">
+                <img src="{% static 'assets/img/health/CT.jpg' %}" alt="Healthcare consultation" class="img-fluid">
+              </div>
+              <div class="image-grid">
+                <div class="grid-item">
+                  <img src="{% static 'assets/img/health/FAC.png' %}" alt="Medical facility" class="img-fluid">
+                </div>
+                <div class="grid-item">
+                  <img src="{% static 'assets/img/health/st.jpg' %}" alt="Medical staff" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </section><!-- /About Section -->
+
+  </main>
+
+
+{% endblock %}

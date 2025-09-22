@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Details{% endblock %}
+
+{% block content %}
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title">
+    <div class="title-wrapper">
+      <h1>Booking</h1>
+      <p>
+        At UzimaHealth, simple and stress-free. With just a few clicks, you can connect with our expert doctors and receive quality healthcare when you need it most
+      </p>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Messages -->
+ 
+
+  <!-- Appointment Section -->
+  <section id="appointmnet" class="appointmnet section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4">
+
+        <!-- Appointment Info -->
+        <div class="col-lg-6">
+          <div class="appointment-info">
+            <h3>Quick &amp; Easy Online Booking</h3>
+            <p class="mb-4">Book your appointment in just a few simple steps. Our healthcare professionals are ready to provide you with the best medical care tailored to your needs.</p>
+
+            <div class="info-items">
+              <div class="info-item d-flex align-items-center mb-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-wrapper me-3"><i class="bi bi-calendar-check"></i></div>
+                <div>
+                  <h5>Flexible Scheduling</h5>
+                  <p class="mb-0">Choose from available time slots that fit your busy schedule</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex align-items-center mb-3" data-aos="fade-up" data-aos-delay="250">
+                <div class="icon-wrapper me-3"><i class="bi bi-stopwatch"></i></div>
+                <div>
+                  <h5>Fill Details</h5>
+                  <p class="mb-0">Provide your personal information and select your preferred department</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex align-items-center mb-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-wrapper me-3"><i class="bi bi-shield-check"></i></div>
+                <div>
+                  <h5>Expert Medical Care</h5>
+                  <p class="mb-0">Board-certified doctors and specialists at your service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Booking Info -->
+
+          <!-- Booking Form -->
+          <div class="col-lg-6">
+            <div class="appointment-form-wrapper" data-aos="fade-up" data-aos-delay="200">
+              <form  method="post" class="appointment-form">
+                {% csrf_token %}
+                <div class="row gy-3">
+  <div class="row gy-3">
+    <!-- Patient Name -->
+    <div class="col-md-6">
+      <label for="patient_name">Patient Name</label>
+      <input type="text" name="patient_name" value="{{ booking.patient_name }}" class="form-control" placeholder="Patient Full Name" required>
+    </div>
+    <!-- Age -->
+    <div class="col-md-6">
+      <label for="age">Age</label>
+      <input type="number" name="age" value="{{ booking.age }}" class="form-control" placeholder="Age" min="0" required>
+    </div>
+    <!-- Contact Number -->
+    <div class="col-md-6">
+      <label for="contact_number">Contact Number</label>
+      <input type="tel" name="contact_number" value="{{ booking.contact_number }}" class="form-control" placeholder="07XXXXXXXX"  pattern="07[0-9]{8}" maxlength="10" title="Enter a valid phone number e.g., 07XXXXXXXX" required>
+
+    </div>
+    <!-- Test Type -->
+    <div class="col-md-6">
+      <label for="test_type">Test Type</label>
+      <select name="test_type" value="{{ booking.test_type }}" class="form-select" required>
+        <option value="">Select Test Type</option>
+        <option value="blood-test" {% if booking.test_type == "blood-test" %}selected{% endif %}>Blood Test</option>
+        <option value="xray" {% if booking.test_type == "xray" %}selected{% endif %}>X-Ray</option>
+        <option value="mri" {% if booking.test_type == "mri" %}selected{% endif %}>MRI Scan</option>
+        <option value="ct-scan" {% if booking.test_type == "ct-scan" %}selected{% endif %}>CT Scan</option>
+        <option value="covid-test" {% if booking.test_type == "covid-test" %}selected{% endif %}>COVID-19 Test</option>
+        <option value="general-checkup" {% if booking.test_type == "general-checkup" %}selected{% endif %}>General Checkup</option>
+      </select>
+    </div>
+    <!-- Date -->
+    <div class="col-md-6">
+  <label for="date">Date</label>
+  <input type="date" name="date" value="{{ booking.date|date:'Y-m-d' }}" class="form-control" required>
+</div>
+
+<!-- Time -->
+<div class="col-md-6">
+  <label for="time">Time</label>
+  <input type="time" name="time" value="{{ booking.time|time:'H:i' }}" class="form-control" required>
+</div>
+    <!-- Hospital Name -->
+    <div class="col-md-12">
+      <label for="hospital_name">Hospital Name</label>
+      <select name="hospital_name" value="{{ booking.hospital_name }}" class="form-select" required>
+        <option value="">Select Hospital</option>
+        <option value="kenyatta" {% if booking.hospital_name == "kenyatta" %}selected{% endif %}>Kenyatta National Hospital</option>
+        <option value="nairobi-hospital" {% if booking.hospital_name == "nairobi-hospital" %}selected{% endif %}>The Nairobi Hospital</option>
+        <option value="aga-khan" {% if booking.hospital_name == "aga-khan" %}selected{% endif %}>Aga Khan University Hospital</option>
+        <option value="moi-teaching" {% if booking.hospital_name == "moi-teaching" %}selected{% endif %}>Moi Teaching & Referral Hospital</option>
+        <option value="coast-general" {% if booking.hospital_name == "coast-general" %}selected{% endif %}>Coast General Teaching & Referral Hospital</option>
+        <option value="other" {% if booking.hospital_name == "other" %}selected{% endif %}>Other</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your appointment request has been sent successfully. We will contact you shortly!</div>
+
+                    <button type="submit" class="btn btn-appointment w-100">
+                      <i class="bi bi-calendar-plus me-2"></i>Book
+                    </button>
+                  </div>
+                  
+
+                </div>
+              </form>
+            </div>
+          </div><!-- End Appointment Form -->
+
+        </div>
+
+        <!-- Process Steps -->
+        <div class="process-steps mt-5" data-aos="fade-up" data-aos-delay="300">
+        </div><!-- End Process Steps -->
+
+      </div>
+
+    </section><!-- /Appointmnet Section -->
+
+  </main>
+
+{% endblock %}

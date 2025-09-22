@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Booking Confirmed{% endblock %}
+
+{% block content %}
+<style>
+/* Print-specific styles */
+@media print {
+    body * {
+        visibility: hidden; /* hide everything */
+    }
+    #printable-slip, #printable-slip * {
+        visibility: visible; /* show only the slip */
+    }
+    #printable-slip {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .btn {
+        display: none; /* hide buttons in print */
+    }
+}
+</style>
+
+<div id="printable-slip" class="container d-flex justify-content-center mt-5">
+    <div class="card shadow-lg p-5" style="max-width: 500px; border-radius: 15px; border-top: 5px solid #28a745;">
+        
+        <!-- Header -->
+        <div class="mb-4 text-center">
+            <h2 class="text-success">✅ UzimaHealth Booking Slip</h2>
+            <p><strong>Reference Code:</strong> {{ booking_ref }}</p>
+        </div>
+
+        <!-- Booking Details -->
+        <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item"><strong>Patient:</strong> {{ patient_name }}</li>
+            <li class="list-group-item"><strong>Test Type:</strong> {{ test_type }}</li>
+            <li class="list-group-item"><strong>Date:</strong> {{ date }}</li>
+            <li class="list-group-item"><strong>Time:</strong> {{ time }}</li>
+            <li class="list-group-item"><strong>Hospital:</strong> {{ hospital_name }}</li>
+        </ul>
+
+        <hr>
+
+        <p class="text-center text-muted mb-4" style="font-size: 0.9rem;">
+            Please keep this slip safe and present it when you arrive at UzimaHealth.
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between">
+            <button onclick="window.print()" class="btn btn-success w-45">
+                <i class="bi bi-printer"></i> Print Slip
+            </button>
+            <a href="/" class="btn btn-secondary w-45">🏠 Back to Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
