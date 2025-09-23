@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} Booking Details{% endblock %}
+{% block title %}Booking Details{% endblock %}
 
 {% block content %}
-<br><br><br><br><br><br>
-<h2 style="text-align: center;" ><b>Booking Details</b></h2>
-<form method="get" action="">
+<br><br><br><br>
+<h2 class="print-header text-center"><b>Booking Details</b></h2>
+<hr>
+<form method="get" action="" class="no-print mb-3">
     <input type="text" name="q" placeholder="Search by patient or test"
-           value="{{ query }}" class="form-control" style="width:300px; display:inline-block;">
-    <button type="submit" class="btn btn-primary">Search</button>
-    <a href="{% url 'UzimaHealth:show_booking' %}" class="btn btn-secondary">Reset</a>
+           value="{{ query }}" class="form-control d-inline-block" style="width:300px;">
+    <button type="submit" class="btn btn-primary" style="border-radius: 15px; background-color: purple;">Search</button>
+    <a href="{% url 'UzimaHealth:show_booking' %}" class="btn btn-secondary " style="border-radius: 15px; background-color: purple;">Reset</a>
 </form>
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -36,29 +38,60 @@
             <td>{{ booking.time }}</td>
             <td>{{ booking.hospital_name }}</td>
             <td class="no-print">
-                <a href="{% url 'UzimaHealth:delete_booking' booking.id %}" onclick="return confirm('Are you sure you want to delete this booking?')" class="btn btn-danger btn-sm">Delete</a>
-                <a href="{% url 'UzimaHealth:update_booking' booking.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'UzimaHealth:delete_booking' booking.id %}"
+                   onclick="return confirm('Are you sure you want to delete this booking?')"
+                   class="btn btn-danger btn-sm" style="border-radius: 10px;">Delete</a>
+                <a href="{% url 'UzimaHealth:update_booking' booking.id %}"
+                   class="btn btn-warning btn-sm" style="border-radius: 10px;">Edit</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-<button onclick="printTable()" class="btn btn-primary">🖨️ Print All Appointments</button>
+
+<button onclick="printTable()" class="btn no-print" style="background-color: purple; color: white; border-radius: 15px;">Print All Appointments</button>
+
+<style>
+/* Hide elements when printing */
+@media print {
+    .no-print,
+    header,
+    footer,
+    nav,
+    .navbar,
+    .header,
+    .site-header,
+    #header,
+    #site-header,
+    .page-title {
+        display: none !important;
+    }
+}
+</style>
 
 <script>
 function printTable() {
-  var divContents = document.querySelector("table").outerHTML;
-  var printWindow = window.open('', '', 'height=600,width=800');
-  printWindow.document.write('<html><head><title>Booking</title></head><body>');
-  printWindow.document.write('<h2>Booking Records</h2>');
-  printWindow.document.write(divContents);
-  printWindow.document.write('</body></html>');
-  printWindow.document.close();
-  printWindow.print();
+    window.print();
 }
-
-
 </script>
-
+<style>
+@media print {
+    /* Hide elements you don't want printed */
+    .no-print,
+    header,
+    footer,
+    nav,
+    .navbar,
+    .header,
+    .main-header,
+    .site-header,
+    .topbar,
+    #header,
+    #site-header,
+    #main-header {
+        display: none !important;
+    }
+}
+</style>
 
 {% endblock %}

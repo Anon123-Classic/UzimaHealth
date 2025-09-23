@@ -22,13 +22,13 @@
     }
 }
 </style>
-
+<br><br><br>
 <div id="printable-slip" class="container d-flex justify-content-center mt-5">
-    <div class="card shadow-lg p-5" style="max-width: 500px; border-radius: 15px; border-top: 5px solid #28a745;">
+    <div class="card shadow-lg p-5" style="max-width: 500px; border-radius: 15px; border-top: 5px solid purple;">
         
         <!-- Header -->
         <div class="mb-4 text-center">
-            <h2 class="text-success">✅ UzimaHealth Booking Slip</h2>
+            <h2 class="title-wrapper sitename ms-2">UzimaHealth Booking Slip</h2>
             <p><strong>Reference Code:</strong> {{ booking_ref }}</p>
         </div>
 
@@ -49,10 +49,10 @@
 
         <!-- Buttons -->
         <div class="d-flex justify-content-between">
-            <button onclick="window.print()" class="btn btn-success w-45">
+            <button onclick="window.print()" class="btn btn-primary">
                 <i class="bi bi-printer"></i> Print Slip
             </button>
-            <a href="/" class="btn btn-secondary w-45">🏠 Back to Home</a>
+    
         </div>
     </div>
 </div>
